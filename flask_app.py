@@ -107,10 +107,11 @@ def handle_dialog(req, res):
                     ],
                     'object': 'кролик'
                 }
+                res['response']['buttons'] = get_suggests(user_id)
                 #
                 return
             else:
-                res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
+                res['response']['text'] = 'Кролика можно найти на Яндекс.Маркете!'
                 res['response']['end_session'] = True
                 return
         # Если нет, то убеждаем его купить слона(кролика)!
